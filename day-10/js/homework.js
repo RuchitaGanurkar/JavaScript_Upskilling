@@ -2,9 +2,11 @@
     const lines = [];
     const p = document.getElementById("hw-text");
     p.textContent = "Plain text once";
+    lines.push("Answer: Task 1 step 1 — paragraph textContent → " + JSON.stringify(p.textContent));
     p.innerHTML = "With <strong>bold</strong> inside";
+    lines.push("Answer: Task 1 step 2 — innerHTML set (paragraph shows bold in DOM).");
     p.textContent = "Back to plain.";
-    lines.push("Homework 1: paragraph cycled textContent / innerHTML / textContent.");
+    lines.push("Answer: Task 1 step 3 — final textContent → " + JSON.stringify(p.textContent));
 
     const items = document.querySelectorAll("#hw-list li");
     for (let i = 0; i < items.length; i++) {
@@ -12,7 +14,7 @@
             items[i].classList.add("even");
         }
     }
-    lines.push("Homework 2: added class 'even' to even indices (0,2,4).");
+    lines.push("Answer: Task 2 — class 'even' on indices 0,2,4 (inspect li elements).");
 
     const btn = document.createElement("button");
     btn.type = "button";
@@ -20,7 +22,7 @@
     btn.className = "hw-btn";
     btn.textContent = "Click me";
     document.querySelector("#hw-cards").before(btn);
-    lines.push("Homework 3: button created and inserted.");
+    lines.push("Answer: Task 3 — button id hw-dynamic-btn inserted before #hw-cards.");
 
     const products = [
         { name: "Mouse", price: 800 },
@@ -34,7 +36,7 @@
         c.textContent = prod.name + " — ₹" + prod.price;
         host.appendChild(c);
     });
-    lines.push("Homework 4: three product cards.");
+    lines.push("Answer: Task 4 — three cards appended: " + products.map(function (x) { return x.name; }).join(", "));
 
     document.getElementById("out").textContent = lines.join("\n");
     console.log(lines.join("\n"));

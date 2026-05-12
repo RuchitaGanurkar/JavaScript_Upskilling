@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 5 — Hands-on</title>
+    <title>Day 13 — Hands-on</title>
     <link rel="stylesheet" href="../../shared/css/styles.css">
 </head>
 <body>
     <div class="page-shell">
         <main class="page-main" id="main-content">
             <header class="page-title">
-                <p class="lesson-label">Day 5 · Hands-on</p>
-                <h1>Loop exercises</h1>
+                <p class="lesson-label">Day 13 · Hands-on</p>
+                <h1>Hoisting and TDZ</h1>
             </header>
             <section aria-labelledby="q-ho">
                 <h2 id="q-ho">Questions</h2>
                 <ol>
-                    <li><code>for</code> loop: multiplication table of 7 from 1 to 10 (template literals). Bonus: even multiples only.</li>
-                    <li><code>while</code>: sum integers 1..100. Bonus: sum odd 1..99.</li>
-                    <li><code>for...of</code> on names array: log each; count names with length &gt; 4. Bonus: <code>for...of</code> on <code>"Jaipur"</code> per char.</li>
-                    <li>Bonus: <code>for...in</code> on a student object — log key: value and property count.</li>
+                    <li>Type: <code>console.log(name); var name = "Priya"; console.log(name);</code> — predict each log. Why is the first <code>undefined</code> and not a <code>ReferenceError</code>?</li>
+                    <li>Type: <code>console.log(city); let city = "Jaipur";</code> — predict. Note the exact error. Move <code>let city</code> above the log and confirm it runs.</li>
+                    <li>In order: <code>sayHi();</code> <code>greet();</code> <code>function sayHi() { console.log("Hi"); }</code> <code>var greet = function () { console.log("Hello"); };</code> — which call works, which throws, and what error type?</li>
+                    <li>Bonus: <code>multiply</code>, <code>square</code>, <code>printSquare(5)</code> — final log? Stack when <code>multiply(5,5)</code> runs?</li>
                 </ol>
             </section>
             <h2>Answers</h2>

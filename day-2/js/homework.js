@@ -1,11 +1,11 @@
 (function () {
     const lines = [];
     const raw = "  riya  ";
-    lines.push("trim + upper: " + raw.trim().toUpperCase());
-    lines.push("includes 'iy': " + String(raw.trim().includes("iy")));
-    const piStr = "3.14159";
-    lines.push("parseFloat piStr → " + parseFloat(piStr));
-    lines.push("Falsy check on '': " + Boolean(""));
+    lines.push("Task — trim, upper, includes");
+    lines.push("Answer: trim().toUpperCase() → " + raw.trim().toUpperCase());
+    lines.push("Answer: includes('iy') on trimmed → " + raw.trim().includes("iy"));
+    lines.push("Answer: parseFloat('3.14159') → " + parseFloat("3.14159"));
+    lines.push('Answer: Boolean("") → ' + Boolean(""));
     document.getElementById("out").textContent = lines.join("\n");
     console.log(lines.join("\n"));
 })();

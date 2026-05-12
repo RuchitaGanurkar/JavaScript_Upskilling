@@ -1,34 +1,32 @@
 (function () {
     const lines = [];
-
-    lines.push("=== Task 1: Rectangle area ===");
     function area(length, width) {
         return length * width;
     }
     const areaArrow = (length, width) => length * width;
-    lines.push("area(5,3) = " + area(5, 3));
-    lines.push("area(10,4) = " + area(10, 4));
-    lines.push("area(7,7) = " + area(7, 7));
-    lines.push("Bonus areaArrow(8,6) = " + areaArrow(8, 6));
+    lines.push("Task 1 — rectangle area");
+    lines.push("Answer: area(5,3) → " + area(5, 3));
+    lines.push("Answer: area(10,4) → " + area(10, 4));
+    lines.push("Answer: area(7,7) → " + area(7, 7));
+    lines.push("Answer: bonus areaArrow(8,6) → " + areaArrow(8, 6));
 
     lines.push("");
-    lines.push("=== Task 2: Greet with default ===");
     const greet = (name = "Guest") => "Hello, " + name + "!";
-    lines.push('greet("Priya") = ' + greet("Priya"));
-    lines.push('greet("Aarav") = ' + greet("Aarav"));
-    lines.push("greet() = " + greet());
-    lines.push("Bonus greet(null) = " + greet(null));
-    lines.push("(Default applies to undefined, not null.)");
+    lines.push("Task 2 — greet with default");
+    lines.push('Answer: greet("Priya") → ' + greet("Priya"));
+    lines.push('Answer: greet("Aarav") → ' + greet("Aarav"));
+    lines.push("Answer: greet() → " + greet());
+    lines.push("Answer: greet(null) → " + greet(null) + " (default only for undefined).");
 
     lines.push("");
-    lines.push("=== Task 3: Celsius to Fahrenheit ===");
     const cToF = (c) => (c * 9) / 5 + 32;
+    lines.push("Task 3 — Celsius to Fahrenheit");
     [0, 100, 37, 45].forEach(function (c) {
-        lines.push(c + "°C → " + cToF(c) + "°F");
+        lines.push("Answer: " + c + "°C → " + cToF(c) + "°F");
     });
 
     lines.push("");
-    lines.push("=== Bonus: pure vs impure ===");
+    lines.push("Task Bonus — pure vs impure");
     function double(n) {
         return n * 2;
     }
@@ -37,10 +35,9 @@
         total += n;
         return total;
     }
-    lines.push("double(3), double(3), double(3) → " + [double(3), double(3), double(3)].join(", "));
+    lines.push("Answer: double(3) x3 → " + [double(3), double(3), double(3)].join(", "));
     total = 0;
-    lines.push("addToTotal(3) x3 → " + [addToTotal(3), addToTotal(3), addToTotal(3)].join(", "));
-    lines.push("// Pure double is easier to reason about: no hidden state.");
+    lines.push("Answer: addToTotal(3) x3 → " + [addToTotal(3), addToTotal(3), addToTotal(3)].join(", "));
 
     document.getElementById("out").textContent = lines.join("\n");
     console.log(lines.join("\n"));

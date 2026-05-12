@@ -1,20 +1,16 @@
 (function () {
     const lines = [];
+    lines.push("Task — const string, let counter, log values and typeof");
     const courseTitle = "JavaScript Upskilling";
     const cohortYear = 2026;
     let completedLessons = 0;
     completedLessons += 1;
-
-    lines.push("Task: declare const/let and log them");
-    lines.push("courseTitle: " + courseTitle);
-    lines.push("cohortYear: " + cohortYear);
-    lines.push("completedLessons: " + completedLessons);
-    lines.push("");
-    lines.push("console.log types:");
-    lines.push(String(typeof courseTitle));
-    lines.push(String(typeof cohortYear));
-    lines.push(String(typeof completedLessons));
-
-    console.log(lines.join("\n"));
+    lines.push("Answer: courseTitle → " + courseTitle);
+    lines.push("Answer: cohortYear → " + cohortYear);
+    lines.push("Answer: completedLessons after += 1 → " + completedLessons);
+    lines.push("Answer: typeof courseTitle → " + typeof courseTitle);
+    lines.push("Answer: typeof cohortYear → " + typeof cohortYear);
+    lines.push("Answer: typeof completedLessons → " + typeof completedLessons);
     document.getElementById("out").textContent = lines.join("\n");
+    console.log(lines.join("\n"));
 })();

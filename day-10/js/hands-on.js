@@ -5,14 +5,12 @@
     titleEl.textContent = "Hello, Student!";
     titleEl.style.color = "crimson";
     titleEl.style.fontFamily = "Georgia, serif";
-    lines.push("Task 1: title updated (see h1 above).");
+    lines.push("Answer: Task 1 — #title text is now \"" + titleEl.textContent + "\" with color and font set (see page).");
 
-    const themeBtn = document.querySelector("#theme-btn");
     document.body.classList.toggle("dark");
     document.body.classList.toggle("dark");
     lines.push(
-        "Task 2: toggled .dark twice on body; has dark now? " +
-            document.body.classList.contains("dark")
+        "Answer: Task 2 — after two toggles, body has class 'dark'? " + document.body.classList.contains("dark")
     );
 
     const list = document.querySelector("#names-list");
@@ -23,7 +21,7 @@
         li.className = "name-item";
         list.appendChild(li);
     });
-    lines.push("Task 3: built list with " + names.length + " items.");
+    lines.push("Answer: Task 3 — appended " + names.length + " list items (see #names-list).");
 
     const cards = document.querySelector("#cards");
     const product = { name: "Laptop", price: 60000, brand: "Dell" };
@@ -39,7 +37,7 @@
     card.appendChild(p);
     card.appendChild(span);
     cards.appendChild(card);
-    lines.push("Bonus: product card appended.");
+    lines.push("Answer: Bonus — one product card under #cards.");
 
     document.getElementById("out").textContent = lines.join("\n");
     console.log(lines.join("\n"));

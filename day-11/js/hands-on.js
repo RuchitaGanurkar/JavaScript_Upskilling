@@ -11,7 +11,7 @@
             counterBtn.textContent = "Stop clicking!";
         }
     });
-    lines.push("Task 1: click counter wired (try the button).");
+    lines.push("Answer: Task 1 — counter wired (click button; after 10 clicks label changes).");
 
     const liveInput = document.querySelector("#live-input");
     const preview = document.querySelector("#preview");
@@ -19,7 +19,7 @@
         const v = liveInput.value;
         preview.textContent = v.length === 0 ? "Start typing..." : v;
     });
-    lines.push("Task 2: live preview on #live-input.");
+    lines.push("Answer: Task 2 — input copies to #preview; empty shows \"Start typing...\".");
 
     const form = document.querySelector("#reg-form");
     const nameField = document.querySelector("#name-field");
@@ -30,7 +30,7 @@
         welcome.textContent =
             name.length === 0 ? "Please enter your name" : "Welcome, " + name + "!";
     });
-    lines.push("Task 3: form submit handled (try submit).");
+    lines.push("Answer: Task 3 — submit prevented; try empty vs filled name.");
 
     const todoList = document.querySelector("#todo-list");
     todoList.addEventListener("click", function (e) {
@@ -41,7 +41,7 @@
     const extra = document.createElement("li");
     extra.textContent = "New task (delegation)";
     todoList.appendChild(extra);
-    lines.push("Task bonus: delegation on #todo-list; new li added.");
+    lines.push("Answer: Bonus — delegation toggles .done on li; extra li added.");
 
     document.getElementById("out").textContent = lines.join("\n");
     console.log(lines.join("\n"));

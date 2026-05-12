@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 5 — Hands-on</title>
+    <title>Day 14 — Hands-on</title>
     <link rel="stylesheet" href="../../shared/css/styles.css">
 </head>
 <body>
     <div class="page-shell">
         <main class="page-main" id="main-content">
             <header class="page-title">
-                <p class="lesson-label">Day 5 · Hands-on</p>
-                <h1>Loop exercises</h1>
+                <p class="lesson-label">Day 14 · Hands-on</p>
+                <h1>Closures and scope</h1>
             </header>
             <section aria-labelledby="q-ho">
                 <h2 id="q-ho">Questions</h2>
                 <ol>
-                    <li><code>for</code> loop: multiplication table of 7 from 1 to 10 (template literals). Bonus: even multiples only.</li>
-                    <li><code>while</code>: sum integers 1..100. Bonus: sum odd 1..99.</li>
-                    <li><code>for...of</code> on names array: log each; count names with length &gt; 4. Bonus: <code>for...of</code> on <code>"Jaipur"</code> per char.</li>
-                    <li>Bonus: <code>for...in</code> on a student object — log key: value and property count.</li>
+                    <li>Write <code>makeCounter()</code> returning a function; each call returns the next integer from 1. Create two independent counters.</li>
+                    <li>Run <code>for (var i = 1; i &lt;= 3; i++) { setTimeout(() =&gt; console.log(i), 100); }</code> — predict output. Fix by changing one keyword to <code>let</code>.</li>
+                    <li>Write <code>createAccount(initial)</code> with private <code>balance</code>, methods <code>deposit</code>, <code>withdraw</code>, <code>getBalance</code>. Test 1000, +500, -200. Is <code>account.balance</code> undefined?</li>
+                    <li>Bonus: <code>memoize(fn)</code> wrapping <code>expensiveSquare</code> that logs <code>computing...</code>; call with 5 twice, 10 once, 5 again — when does the log fire?</li>
                 </ol>
             </section>
             <h2>Answers</h2>

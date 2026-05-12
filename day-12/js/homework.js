@@ -7,18 +7,21 @@
         }
         return a / b;
     }
+    lines.push("Task 1 — safeDivide");
     [function () {
         return safeDivide(10, 2);
     }, function () {
         return safeDivide(3, 0);
     }].forEach(function (fn, i) {
         try {
-            lines.push("call " + i + ": " + fn());
+            lines.push("Answer: call " + i + " → " + fn());
         } catch (e) {
-            lines.push("call " + i + ": caught " + e.message);
+            lines.push("Answer: call " + i + " → caught: " + e.message);
         }
     });
 
+    lines.push("");
+    lines.push("Task 2 — NotFoundError");
     class NotFoundError extends Error {
         constructor(message) {
             super(message);
@@ -32,16 +35,18 @@
         throw new NotFoundError("User " + id + " not found");
     }
     try {
-        lines.push("user 2: " + JSON.stringify(getUserById(2)));
+        lines.push("Answer: getUserById(2) → " + JSON.stringify(getUserById(2)));
         getUserById(99);
     } catch (err) {
         if (err instanceof NotFoundError) {
-            lines.push("not found branch: " + err.message);
+            lines.push("Answer: getUserById(99) → " + err.name + ": " + err.message);
         } else {
-            lines.push(err.message);
+            lines.push("Answer: " + err.message);
         }
     }
 
+    lines.push("");
+    lines.push("Task 3 — calculator namespace");
     const calc = {
         add: function (a, b) {
             return a + b;
@@ -70,15 +75,9 @@
             }
         }
     };
-    lines.push(
-        "inline calc namespace: 5+3=" +
-            calc.add(5, 3) +
-            ", default calculate('multiply',4,5)=" +
-            calc.calculate("multiply", 4, 5)
-    );
-    lines.push(
-        "// Homework 3–4: In a project, move calc to calc.js and use export/import."
-    );
+    lines.push("Answer: calc.add(5,3) → " + calc.add(5, 3));
+    lines.push("Answer: calc.calculate('multiply',4,5) → " + calc.calculate("multiply", 4, 5));
+    lines.push("Answer: split into calc.js + import would mirror this object in real modules.");
 
     document.getElementById("out").textContent = lines.join("\n");
     console.log(lines.join("\n"));

@@ -1,7 +1,7 @@
 (function () {
     const lines = [];
 
-    lines.push("=== Task 1: safeParse ===");
+    lines.push("Task 1 — safeParse");
     function safeParse(str) {
         try {
             return JSON.parse(str);
@@ -10,11 +10,11 @@
             return null;
         }
     }
-    lines.push("valid → " + JSON.stringify(safeParse('{"name":"Priya"}')));
-    lines.push("broken → " + String(safeParse('{"name":"Priya"')));
+    lines.push("Answer: valid JSON → " + JSON.stringify(safeParse('{"name":"Priya"}')));
+    lines.push("Answer: broken JSON → " + String(safeParse('{"name":"Priya"')));
 
     lines.push("");
-    lines.push("=== Task 2: setAge ===");
+    lines.push("Task 2 — setAge");
     function setAge(age) {
         if (typeof age !== "number") {
             throw new Error("Age must be a number");
@@ -26,9 +26,9 @@
     }
     function trySetAge(label, age) {
         try {
-            lines.push(label + " → " + setAge(age));
+            lines.push("Answer: " + label + " → " + setAge(age));
         } catch (e) {
-            lines.push(label + " → caught: " + e.message);
+            lines.push("Answer: " + label + " → caught: " + e.message);
         }
     }
     trySetAge("setAge(25)", 25);
@@ -36,7 +36,7 @@
     trySetAge("setAge(200)", 200);
 
     lines.push("");
-    lines.push("=== Task 3: ValidationError ===");
+    lines.push("Task 3 — ValidationError");
     class ValidationError extends Error {
         constructor(message) {
             super(message);
@@ -52,12 +52,12 @@
     function tryEmail(em) {
         try {
             validateEmail(em);
-            lines.push(em + " → ok");
+            lines.push("Answer: " + em + " → ok");
         } catch (err) {
             if (err instanceof ValidationError) {
-                lines.push(em + " → ValidationError: " + err.message);
+                lines.push("Answer: " + em + " → ValidationError: " + err.message);
             } else {
-                lines.push(em + " → " + err.message);
+                lines.push("Answer: " + em + " → " + err.message);
             }
         }
     }
@@ -66,7 +66,7 @@
 
     lines.push("");
     lines.push(
-        "Bonus (modules): real multi-file imports need type=module + a server; skipped in this single-file setup."
+        "Answer: Bonus — separate module files need <script type=\"module\"> and a local server; not added here."
     );
 
     document.getElementById("out").textContent = lines.join("\n");

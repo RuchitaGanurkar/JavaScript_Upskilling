@@ -1,6 +1,6 @@
 (function () {
     const lines = [];
-    lines.push("Homework-style practice: traffic light");
+    lines.push("Task 1 — traffic light with switch");
     const light = "yellow";
     let action = "";
     switch (light) {
@@ -16,11 +16,12 @@
         default:
             action = "Unknown";
     }
-    lines.push(light + " → " + action);
+    lines.push("Answer: light " + light + " → " + action);
 
+    lines.push("");
+    lines.push("Task 2 — pass/fail ternary");
     const score = 68;
-    const passed = score >= 60 ? "Pass" : "Fail";
-    lines.push("score " + score + " → " + passed);
+    lines.push("Answer: score " + score + " → " + (score >= 60 ? "Pass" : "Fail"));
 
     document.getElementById("out").textContent = lines.join("\n");
     console.log(lines.join("\n"));
