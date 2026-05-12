@@ -1,21 +1,22 @@
 /* JS curriculum UI — one file, tokens + layout + components */
 :root {
-    --bg: #eef2e4;
-    --surface: #fff;
-    --text: #102030;
-    --muted: #4a6270;
-    --border: #c5d3e0;
-    --border-soft: #dfe8f0;
-    --accent: #0f6b8a;
-    --accent-hover: #0a546d;
-    --accent-soft: #e0eef4;
-    --link: #0d5f7c;
-    --code-bg: #eef2f7;
-    --output-bg: #f4f7fa;
+    /* Warm palette: lighter orange, coral / soft red, warm charcoal “black” */
+    --bg: #faf5f2;
+    --surface: #fffdfb;
+    --text: #2e2624;
+    --muted: #7a5f58;
+    --border: #f0d0c4;
+    --border-soft: #f9e8e2;
+    --accent: #e07d52;
+    --accent-hover: #c45f3d;
+    --accent-soft: #fdeee8;
+    --link: #c75a52;
+    --code-bg: #fff5f0;
+    --output-bg: #fff0ea;
     --radius: 12px;
     --radius-sm: 8px;
-    --shadow: 0 4px 24px rgba(16, 32, 48, 0.08);
-    --shadow-sm: 0 1px 4px rgba(16, 32, 48, 0.06);
+    --shadow: 0 4px 24px rgba(46, 30, 26, 0.07);
+    --shadow-sm: 0 1px 4px rgba(46, 30, 26, 0.05);
     --font: system-ui, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
     --mono: ui-monospace, "Cascadia Code", Consolas, monospace;
     --shell-max: 58rem;
@@ -42,8 +43,9 @@ body {
     color: var(--text);
     background: var(--bg);
     background-image:
-        radial-gradient(ellipse 100% 60% at 50% -15%, rgba(15, 107, 138, 0.14), transparent 50%),
-        linear-gradient(168deg, #dde6ef 0%, #eef2f7 45%, #e6ecf4 100%);
+        radial-gradient(ellipse 100% 55% at 50% -12%, rgba(224, 125, 82, 0.18), transparent 52%),
+        radial-gradient(ellipse 80% 45% at 100% 0%, rgba(199, 90, 82, 0.08), transparent 45%),
+        linear-gradient(168deg, #fdf0ea 0%, #faf5f2 42%, #f7ebe6 100%);
     min-height: 100vh;
     overflow-anchor: none;
     overflow-x: clip;
@@ -89,7 +91,7 @@ body {
     min-width: 0;
     padding: 1.5rem 1.55rem 1.65rem;
     background:
-        linear-gradient(145deg, rgba(15, 107, 138, 0.06) 0%, transparent 55%),
+        linear-gradient(145deg, rgba(224, 125, 82, 0.09) 0%, transparent 55%),
         var(--surface);
     border: 1px solid var(--border-soft);
     border-radius: var(--radius);
@@ -166,7 +168,7 @@ body {
     cursor: pointer;
     font-weight: 650;
     font-size: 0.8rem;
-    color: #3d5260;
+    color: var(--muted);
     list-style: none;
     border-radius: var(--radius-sm);
     padding: 0.2rem 0.35rem;
@@ -175,7 +177,7 @@ body {
 }
 
 .site-outline-details summary:hover {
-    background: rgba(15, 107, 138, 0.06);
+    background: rgba(224, 125, 82, 0.1);
     color: var(--accent-hover);
 }
 
@@ -192,7 +194,7 @@ body {
     content: "▸ ";
     display: inline-block;
     width: 1em;
-    color: #8fa4b2;
+    color: #b8988e;
 }
 
 .site-outline-details[open] summary::before {
@@ -254,7 +256,7 @@ details.exercise > summary {
 }
 
 details.exercise > summary:hover {
-    background: #f0f4f8;
+    background: #faf0ec;
 }
 
 details.exercise > summary::before {
@@ -265,7 +267,7 @@ details.exercise > summary::before {
     text-align: center;
     font-size: 0.75rem;
     line-height: 1;
-    color: #7a94a8;
+    color: #a88880;
     transition: transform 0.18s ease;
     margin-top: 0.22rem;
 }
@@ -292,8 +294,8 @@ details.exercise > summary:focus-visible {
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #4a6270;
-    background: linear-gradient(180deg, #eef3f7 0%, #e6eef4 100%);
+    color: var(--muted);
+    background: linear-gradient(180deg, #fff5f0 0%, #fdeee8 100%);
     border: 1px solid var(--border-soft);
     border-radius: var(--radius-sm);
 }
@@ -378,4 +380,40 @@ details.exercise .code-sample {
 
 .homework-q {
     margin: 0 0 1rem;
+}
+
+/* Questions / Answers blocks inside day pages */
+.page-main h2 {
+    margin: 1.35rem 0 0.55rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent-hover);
+}
+
+.page-main h2:first-of-type {
+    margin-top: 1rem;
+}
+
+.page-main section[aria-labelledby] {
+    margin-top: 0.25rem;
+}
+
+.page-main section[aria-labelledby] ol {
+    margin: 0.35rem 0 0;
+    padding-left: 1.2rem;
+    color: var(--text);
+}
+
+.page-main section[aria-labelledby] li {
+    margin-bottom: 0.45rem;
+}
+
+.page-main section[aria-labelledby] code {
+    font-size: 0.88em;
+    background: var(--accent-soft);
+    padding: 0.12rem 0.35rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
 }
